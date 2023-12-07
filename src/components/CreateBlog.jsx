@@ -50,6 +50,7 @@ const CreateBlog = () => {
       image: imageData,
       userid: userData.id,
 
+
       //phone: parseInt(data.phone),
     };
     axios
@@ -97,12 +98,14 @@ const CreateBlog = () => {
     formData.append("image", imageUpload); //append the values with key, value pair
     //formData.append("name", imageUpload.name);
     formData.append("name", imageUpload.name);
+    // url print 
 
     const config = {
       headers: { "content-type": "multipart/form-data" },
       withCredentials: true,
     };
     let url = `${process.env.REACT_APP_BACKEND_URL}/api/upload-image`;
+    console.log(url);
 
     axios
       .post(url, formData, config)
